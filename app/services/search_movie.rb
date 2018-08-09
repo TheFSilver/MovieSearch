@@ -9,7 +9,7 @@ class SearchMovie
 
     all_results = Tmdb::Search.movie(titre).results[number]
     @id = all_results.id
-    sleep(1)
+    sleep(0.5)
     movie_hash = Tmdb::Movie.detail(@id)
     movies = []
     movies << movie_hash["title"]
@@ -19,7 +19,7 @@ class SearchMovie
     crew_hash.each do |an_array|
       if an_array["job"] == "Director"
         movies << an_array["name"]
-        sleep(1)
+        sleep(0.5)
       end
     end
     if movies[4] != nil
