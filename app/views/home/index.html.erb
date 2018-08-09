@@ -1,0 +1,17 @@
+<% load "search_movie" %>
+
+<h1><a href="/">Home#index</a></h1>
+<p>Find me in app/views/home/index.html.erb</p>
+
+<%= form_tag("/", method: "get") do %>
+  <%= label_tag(:demand, "Search for:") %>
+  <%= text_field_tag(:demand) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+<% if @demand != nil %>
+Voici les résultats pour : "<%=@demand%>"<br><br>
+  <% for item in (0..19) do %>
+    <%= SearchMovie.new.perform(@demand, item) %> <br><br>
+  <% end %>
+<% end %>
