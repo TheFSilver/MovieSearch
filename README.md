@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Voici le lien du site sur heroku <a href="https://the-movie-search.herokuapp.com">https://the-movie-search.herokuapp.com</a>
 
-Things you may want to cover:
+## Créateurs : La Fameuse Fine Équipe ##
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Derrière cet énième repository stylé se cache...
+* <a href="https://github.com/AniMoure">Anisoara</a>
+* <a href="https://github.com/TheFSilver">François D.</a>
+* <a href="https://github.com/skageraz">Jeremy Rak</a>
+* <a href="https://github.com/Titouax">Titouan</a>
