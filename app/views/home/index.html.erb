@@ -12,7 +12,6 @@
 <% if @demand != nil %>
 Voici les résultats pour : "<%=@demand%>"<br><br>
   <% for item in (0..19) do %>
-    <%= image_tag "https://image.tmdb.org/t/p/w185#{SearchMovie.new.display_picture(@demand, item)}" %>
     <%= SearchMovie.new.perform(@demand, item) %> <br><br>
   <% end %>
 <% end %>
