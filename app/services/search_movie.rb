@@ -3,9 +3,11 @@ require 'dotenv'
 Dotenv.load('.env')
 
 class SearchMovie
+  attr_reader :pictures
 
   def search(titre, number)
     Tmdb::Api.key(ENV["DBMOVIE_KEY"])
+    Tmdb::Api.language("fr")
 
     all_results = Tmdb::Search.movie(titre).results[number]
     @id = all_results.id
@@ -22,6 +24,7 @@ class SearchMovie
         sleep(0.5)
       end
     end
+
     if movies[4] != nil
       return "Titre du film: #{movies[0]} \nDate de sortie: #{movies[1]} \nRéalisateurs: #{movies[2]}, #{movies[3]} et #{movies[4]}"
     elsif movies[3] != nil && movies[4] == nil
@@ -39,4 +42,19 @@ class SearchMovie
     search(title, num)
   end
 
+  def display_picture(titre, number)
+
+    Tmdb::Api.key(ENV["DBMOVIE_KEY"])
+    Tmdb::Api.language("fr")
+    all_results = Tmdb::Search.movie(titre).results[number]
+    @id = all_results.id
+    sleep(0.5)
+    if Tmdb::Movie.posters(@id) != nil
+      @pictures = []
+      @pictures << Tmdb::Movie.posters(@id)
+      return @pictures
+    else
+      return nil
+    end
+  end
 end
