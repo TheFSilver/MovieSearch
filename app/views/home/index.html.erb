@@ -1,12 +1,12 @@
 <% load "search_movie" %>
 
-<h1><a href="/">Home#index</a></h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<h1>⭐Bienvenue sur Movie Search⭐</h1>
+<p>Cherche des informations sur ton film préféré</p>
 
 <%= form_tag("/", method: "get") do %>
-  <%= label_tag(:demand, "Search for:") %>
+  <%= label_tag(:demand, "Titre") %>
   <%= text_field_tag(:demand) %>
-  <%= submit_tag("Search") %>
+  <%= submit_tag("Chercher") %>
 <% end %>
 
 <% if @demand != nil %>
