@@ -6,20 +6,20 @@ class SearchMovie
 
   def search(titre, number)
     Tmdb::Api.key(ENV["DBMOVIE_KEY"])
-    sleep(1)
+    sleep(0.5)
     all_results = Tmdb::Search.movie(titre).results[number]
     @id = all_results.id
-    sleep(1)
+    sleep(0.5)
     movie_hash = Tmdb::Movie.detail(@id)
     movies = []
     movies << movie_hash["title"]
     movies << movie_hash["release_date"]
-    sleep(1)
+    sleep(0.5)
     crew_hash = Tmdb::Movie.crew(@id)
     crew_hash.each do |an_array|
       if an_array["job"] == "Director"
         movies << an_array["name"]
-        sleep(1)
+        sleep(0.5)
       end
     end
 
