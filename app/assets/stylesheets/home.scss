@@ -1,3 +1,20 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+
+.footer {
+  position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #2b3964;
+    color: white;
+    text-align: center;
+
+    a{
+      color: white;
+    }
+  }
